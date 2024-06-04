@@ -17,7 +17,8 @@ async def start(event):
         await event.respond("You are not authorized to use this Bot. Create your own.")
         return
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
-   await event.respond(message=f"**Hello, , I Am Batch Forwarder Bot.** \n**Using me you can forward all the files in a channel to anothor easily** \n**USE AT OWN RISK !!!!! ACCOUNT MAY GET BAN**"
+    firstname = replied_users.user.first_name
+    await event.respond(message=f"**Hello, {firstname}, I Am Batch Forwarder Bot.** \n**Using me you can forward all the files in a channel to anothor easily** \n**USE AT OWN RISK !!!!! ACCOUNT MAY GET BAN**"
                      )
 
 
@@ -42,5 +43,3 @@ async def handler(event):
         await event.respond("You are an admin")
     else:
         await event.respond("You are not an admin")
-
-
